@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.MovieView" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:font" tools:targetApi="o">@font/nexa_light</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/banana_200</item>
         <item name="colorPrimaryVariant">@color/banana_700</item>

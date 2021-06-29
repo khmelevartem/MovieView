@@ -41,11 +41,18 @@ class SplashFragment : Fragment() {
                 }
                 AppState.Success -> {
                     binding.bobbin.clearAnimation()
+
                     binding.splashIcon
                         .animate()
                         .rotation(360f)
                         .translationXBy(1000f)
                         .setDuration(DURATION)
+                        .start()
+                    binding.splashTitle
+                        .animate()
+                        .translationYBy(500f)
+                        .setStartDelay(DURATION/5)
+                        .setDuration(DURATION/2)
                         .start()
                     binding.background
                         .animate()
@@ -83,6 +90,7 @@ class SplashFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.splashTitle.clearAnimation()
         binding.bobbin.clearAnimation()
         binding.splashIcon.clearAnimation()
         binding.background.clearAnimation()
