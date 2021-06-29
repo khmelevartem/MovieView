@@ -6,7 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tubetoast.movieview.R
 import com.tubetoast.movieview.entities.Movie
 
-class ListAdapter(var content: List<Movie>? = null) : RecyclerView.Adapter<ViewHolder>() {
+class ListAdapter(
+    private val downloadMore: () -> Unit,
+) : RecyclerView.Adapter<ViewHolder>() {
+
+    var content: List<Movie>? = null
+    set(value) {
+        field = value
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -16,6 +24,7 @@ class ListAdapter(var content: List<Movie>? = null) : RecyclerView.Adapter<ViewH
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         content?.let{
+            if (position == it.size-2) downloadMore()
             holder.setContent(it[position])
         }
     }

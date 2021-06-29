@@ -28,10 +28,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_middle"
-            app:layout_constraintBottom_toTopOf="@+id/description"
             app:layout_constraintEnd_toStartOf="@+id/icon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/icon"
+            app:layout_constraintVertical_bias="0"
             tools:text="Title" />
 
         <TextView
@@ -40,9 +40,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_middle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/icon"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/icon"
+            app:layout_constraintTop_toBottomOf="@+id/title"
             tools:text="Description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

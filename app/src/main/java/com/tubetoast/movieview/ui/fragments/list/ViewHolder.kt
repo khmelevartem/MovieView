@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.tubetoast.movieview.R
 import com.tubetoast.movieview.entities.Movie
 
@@ -20,7 +21,9 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         movie.icon?.let{
             Glide.with(itemView)
                 .load(it)
-                .placeholder(R.drawable.placeholder)
+                .transform(RoundedCorners(itemView.resources.getDimension(R.dimen.list_item_radius).toInt()))
+//                .apply(requestOptions)
+                .placeholder(R.drawable.icon)
                 .into(icon)
         }
     }
