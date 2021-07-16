@@ -11,7 +11,9 @@ interface NytApi {
     @GET("reviews/picks.json")
     fun getMoviesAtPage(
         @Query("offset") offset: Int = 0,
-        @Query("api-key") key: String = BuildConfig.NYT_KEY
+        //в реальном проекте я бы сделал что то похожее на это
+//        @Query("api-key") key: String = BuildConfig.NYT_KEY
+        @Query("api-key") key: String = "CIX4vj6V1YiMHuUzyEzFjHaJMMGVBkYT"
     ): Observable<ResponseDTO>
 
 }
