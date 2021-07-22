@@ -20,12 +20,5 @@ RecyclerView со списком фильмов.
 
 Для каждого фильма должно быть название, описание, картинка. 
 
-Список фильмов получаем по api от https://developer.nytimes.com/ -  Movie Reviews API
-
-
-Регистрируемся на сайте, получаем ключ и выполняем запрос:
-
-https://api.nytimes.com/svc/movies/v2/reviews/all.json
-
 Обязательно используем загрузку при скролле RecyclerView. 
 Желательно использовать retrofit
