@@ -11,10 +11,10 @@ class ListAdapter(
 ) : RecyclerView.Adapter<ViewHolder>() {
 
     var content: List<Movie>? = null
-    set(value) {
-        field = value
-        notifyDataSetChanged()
-    }
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -23,8 +23,8 @@ class ListAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        content?.let{
-            if (position == it.size-2) downloadMore()
+        content?.let {
+            if (position == it.size - 2) downloadMore()
             holder.setContent(it[position])
         }
     }

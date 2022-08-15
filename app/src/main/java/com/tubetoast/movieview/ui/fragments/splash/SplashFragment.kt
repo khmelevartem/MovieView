@@ -15,14 +15,14 @@ import com.tubetoast.movieview.viewmodel.entities.AppState
 
 class SplashFragment : Fragment() {
 
-    private var _binding : FragmentSplashBinding? = null
-    private val binding : FragmentSplashBinding get() = _binding!!
+    private var _binding: FragmentSplashBinding? = null
+    private val binding: FragmentSplashBinding get() = _binding!!
 
-    private val viewModel : MainViewModel by activityViewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentSplashBinding.inflate(inflater, container, false)
         return binding.root
@@ -30,7 +30,7 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getAppState().observe(viewLifecycleOwner){
+        viewModel.getAppState().observe(viewLifecycleOwner) {
             when (it) {
                 AppState.Loading -> {
                     binding.bobbin.animate()
@@ -50,8 +50,8 @@ class SplashFragment : Fragment() {
                     binding.splashTitle
                         .animate()
                         .translationYBy(500f)
-                        .setStartDelay(DURATION/5)
-                        .setDuration(DURATION/2)
+                        .setStartDelay(DURATION / 5)
+                        .setDuration(DURATION / 2)
                         .start()
                     binding.background
                         .animate()
@@ -75,10 +75,10 @@ class SplashFragment : Fragment() {
         startLoading()
     }
 
-    private fun doOnError(){
+    private fun doOnError() {
         Snackbar.make(binding.root,
             getString(R.string.internet_error),
-            Snackbar.LENGTH_INDEFINITE).setAction(getString(R.string.retry)){
+            Snackbar.LENGTH_INDEFINITE).setAction(getString(R.string.retry)) {
             startLoading()
         }.show()
     }
@@ -96,7 +96,7 @@ class SplashFragment : Fragment() {
         _binding = null
     }
 
-    companion object{
+    companion object {
         const val DURATION = 1000L
     }
 }

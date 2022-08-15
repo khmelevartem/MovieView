@@ -8,17 +8,17 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Action
 import io.reactivex.functions.Consumer
 
-abstract class AbstractViewModel: ViewModel(){
+abstract class AbstractViewModel : ViewModel() {
 
     val disposable = CompositeDisposable()
 
     private val appState = MutableLiveData<AppState>()
 
-    val onLoad = Consumer<Any?>{ appState.postValue(AppState.Loading) }
-    val onSuccess = Action{ appState.postValue(AppState.Success) }
-    val onError = Consumer<Throwable>{ appState.postValue(AppState.Error(it)) }
+    val onLoad = Consumer<Any?> { appState.postValue(AppState.Loading) }
+    val onSuccess = Action { appState.postValue(AppState.Success) }
+    val onError = Consumer<Throwable> { appState.postValue(AppState.Error(it)) }
 
-    fun getAppState() : LiveData<AppState> {
+    fun getAppState(): LiveData<AppState> {
         return appState
     }
 
@@ -26,5 +26,5 @@ abstract class AbstractViewModel: ViewModel(){
         disposable.dispose()
         super.onCleared()
     }
-    
+
 }

@@ -15,13 +15,14 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val description = itemView.findViewById<TextView>(R.id.description)
     private val icon = itemView.findViewById<ImageView>(R.id.icon)
 
-    fun setContent(movie: Movie){
+    fun setContent(movie: Movie) {
         title.text = movie.title
         description.text = movie.description ?: ""
-        movie.icon?.let{
+        movie.icon?.let {
             Glide.with(itemView)
                 .load(it)
-                .transform(RoundedCorners(itemView.resources.getDimension(R.dimen.list_item_radius).toInt()))
+                .transform(RoundedCorners(itemView.resources.getDimension(R.dimen.list_item_radius)
+                    .toInt()))
 //                .apply(requestOptions)
                 .placeholder(R.drawable.icon)
                 .into(icon)

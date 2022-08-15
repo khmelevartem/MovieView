@@ -1,7 +1,6 @@
 package com.tubetoast.movieview.data.sources.nyt
 
 import com.google.gson.GsonBuilder
-import com.tubetoast.movieview.BuildConfig
 import io.reactivex.schedulers.Schedulers
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -27,7 +26,7 @@ object NytService {
         .client(createOkHttpClient())
         .build()
 
-    val api : NytApi by lazy {
+    val api: NytApi by lazy {
         retrofit.create(NytApi::class.java)
     }
 
