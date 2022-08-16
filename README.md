@@ -1,11 +1,12 @@
 MovieView
 
-Приложение для отображения списка фильмов.
+Application that shows you a list of the most recent movies.
 
-Сплэш скрин **анимирован**.
+Splash screen is animated.
 
-Использует **пагинацию** - дозагрузка происходит при пролистывании до конца имеющегося списка.
+Uses paging (custom). New info is downloaded when you scroll to the pre-last item
 
+Technologies:
 - kotlin
 - Retrofit
 - RxJava
